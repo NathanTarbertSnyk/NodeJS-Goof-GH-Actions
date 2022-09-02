@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Use Node.js ${{ matrix.node-version }}
+      - continue-on-error: true # To make sure that SARIF upload gets called
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
